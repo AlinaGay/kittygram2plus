@@ -70,6 +70,10 @@ GET http://localhost:8000/cats/
 
 ###
 
+GET http://localhost:8000/cats/1/
+
+###
+
 POST http://localhost:8000/cats/
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzMjQ1NjA2LCJpYXQiOjE3NDMxNTkyMDYsImp0aSI6ImQzNTk3MzQ5ZjdiZjQyNDZhMzFlZDY3NmQ1MjhjMWNlIiwidXNlcl9pZCI6Mn0.i2qbpYXC85j6dEWPdArBjdzj84Lfs2-6e3nO40VU95A
@@ -84,3 +88,35 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 ###
 
 GET http://localhost:8000/users/
+
+###
+
+POST http://localhost:8000/achievements/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzMjQ1NjA2LCJpYXQiOjE3NDMxNTkyMDYsImp0aSI6ImQzNTk3MzQ5ZjdiZjQyNDZhMzFlZDY3NmQ1MjhjMWNlIiwidXNlcl9pZCI6Mn0.i2qbpYXC85j6dEWPdArBjdzj84Lfs2-6e3nO40VU95A
+
+{
+    "achievement_name": "Broke vase"
+}
+
+
+###
+
+GET http://localhost:8000/achievements/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzMjQ1NjA2LCJpYXQiOjE3NDMxNTkyMDYsImp0aSI6ImQzNTk3MzQ5ZjdiZjQyNDZhMzFlZDY3NmQ1MjhjMWNlIiwidXNlcl9pZCI6Mn0.i2qbpYXC85j6dEWPdArBjdzj84Lfs2-6e3nO40VU95A
+
+###
+
+PATCH http://localhost:8000/cats/3/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzMjQ1NjA2LCJpYXQiOjE3NDMxNTkyMDYsImp0aSI6ImQzNTk3MzQ5ZjdiZjQyNDZhMzFlZDY3NmQ1MjhjMWNlIiwidXNlcl9pZCI6Mn0.i2qbpYXC85j6dEWPdArBjdzj84Lfs2-6e3nO40VU95A
+
+{
+    "achievements": [
+        {
+            "id": 1,
+            "achievement_name": "Broke vase"
+        }
+    ]
+}
