@@ -1,0 +1,86 @@
+POST http://localhost:8000/auth/users/
+Content-Type: application/json
+
+{
+    "username": "user1",
+    "password": "securepass123",
+    "email": "user1@example.com"
+}
+
+###
+
+POST http://localhost:8000/auth/jwt/create/
+Content-Type: application/json
+
+{
+    "username": "user1",
+    "password": "securepass123"
+}
+
+###
+
+POST http://localhost:8000/cats/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzMjQ0Nzg0LCJpYXQiOjE3NDMxNTgzODQsImp0aSI6IjE3OTIyMjRiNGQ2ZTQzMGZiNDg0YzBlMzMxY2QyNzU1IiwidXNlcl9pZCI6MX0.YKtIu8ur6mZEU0E80MRImfQbo-SWDcgSe4Nl8-aLoRY
+
+{
+    "name": "Pushok",
+    "color": "White",
+    "birth_year": 2021,
+    "achievements": []
+}
+
+###
+
+POST http://localhost:8000/cats/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzMjQ0Nzg0LCJpYXQiOjE3NDMxNTgzODQsImp0aSI6IjE3OTIyMjRiNGQ2ZTQzMGZiNDg0YzBlMzMxY2QyNzU1IiwidXNlcl9pZCI6MX0.YKtIu8ur6mZEU0E80MRImfQbo-SWDcgSe4Nl8-aLoRY
+
+{
+    "name": "Bars",
+    "color": "Black",
+    "birth_year": 2022,
+    "achievements": []
+}
+
+###
+
+POST http://localhost:8000/auth/users/
+Content-Type: application/json
+
+{
+    "username": "user2",
+    "password": "securepass456",
+    "email": "user2@example.com"
+}
+
+###
+
+POST http://localhost:8000/auth/jwt/create/
+Content-Type: application/json
+
+{
+    "username": "user2",
+    "password": "securepass456"
+}
+
+###
+
+GET http://localhost:8000/cats/
+
+###
+
+POST http://localhost:8000/cats/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQzMjQ1NjA2LCJpYXQiOjE3NDMxNTkyMDYsImp0aSI6ImQzNTk3MzQ5ZjdiZjQyNDZhMzFlZDY3NmQ1MjhjMWNlIiwidXNlcl9pZCI6Mn0.i2qbpYXC85j6dEWPdArBjdzj84Lfs2-6e3nO40VU95A
+
+{
+    "name": "Ryzhik",
+    "color": "Ginger",
+    "birth_year": 2023,
+    "achievements": []
+}
+
+###
+
+GET http://localhost:8000/users/
