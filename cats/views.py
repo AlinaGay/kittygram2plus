@@ -24,6 +24,12 @@ class CatViewSet(viewsets.ModelViewSet):
             return (ReadOnly(),)
         return super().get_permissions()
 
+    def get_queryset(self):
+        cats = Cat.objects.all()
+        color = self.kwargs['color']
+        queryset = cats.filter(color=color)
+        return queryset
+
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
