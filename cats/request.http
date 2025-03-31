@@ -124,3 +124,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 ###
 
 GET http://127.0.0.1:8000/cats/?limit=2&offset=4
+
+###
+
+GET http://127.0.0.1:8000/cats/?color=Black
+
+###
+
+GET http://127.0.0.1:8000/cats/?color=White&birth_year=2021

@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework.throttling import AnonRateThrottle
 
@@ -12,9 +13,11 @@ class CatViewSet(viewsets.ModelViewSet):
     queryset = Cat.objects.all()
     serializer_class = CatSerializer
     permission_classes = (OwnerOrReadOnly,)
+    filter_backends = (DjangoFilterBackend,)
     throttle_classes = (AnonRateThrottle, WorkingHoursRateThrottle)
     throttle_scope = 'low_request'
     pagination_class = CatsPagination
+    filterset_fields = ('color', 'birth_year')
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -23,12 +26,6 @@ class CatViewSet(viewsets.ModelViewSet):
         if self.action == 'retrieve':
             return (ReadOnly(),)
         return super().get_permissions()
-
-    def get_queryset(self):
-        cats = Cat.objects.all()
-        color = self.kwargs['color']
-        queryset = cats.filter(color=color)
-        return queryset
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
