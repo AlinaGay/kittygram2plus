@@ -132,3 +132,11 @@ GET http://127.0.0.1:8000/cats/?color=Black
 ###
 
 GET http://127.0.0.1:8000/cats/?color=White&birth_year=2021
+
+###
+
+GET http://127.0.0.1:8000/cats/?search=push
+
+###
+
+GET http://127.0.0.1:8000/cats?ordering=name,birth_year
